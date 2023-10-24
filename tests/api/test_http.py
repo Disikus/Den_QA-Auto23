@@ -1,5 +1,5 @@
 import pytest
-import requests
+import requests 
 
 @pytest.mark.http
 def test_first_request():
