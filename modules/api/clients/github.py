@@ -16,3 +16,27 @@ class Github:
         body= r.json()
         
         return body 
+    
+    def get_emojis(self):
+        r = requests.get('https://api.github.com/emojis')
+        body = r.status_code
+
+        return body
+    
+    def get_emojis_non_correct(self, name):
+        r = requests.get(f'https://api.github.com/emojis/{name}')
+        body = r.json()
+
+        return body
+    
+    def list_commits(self, owner, repo):
+        r = requests.get(f'https://api.github.com/repos/{owner}/{repo}/commits')
+        body = r.json()
+
+        return body
+    
+    def list_commits_status_code(self, owner, repo):
+        r = requests.get(f'https://api.github.com/repos/{owner}/{repo}/commits')
+        body = r.status_code
+
+        return body
